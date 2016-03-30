@@ -6,7 +6,7 @@ Seed({
 		description : "",
 		test : "Mold.Test.Lib.Event",
 		include : [
-			"Mold.Core.EventStore"
+			{ EventStore : "Mold.Core.EventStore" }
 		],
 		version : 0.1
 	},
@@ -102,7 +102,7 @@ Seed({
 			when : function(event, callback){
 				var executeOn  = function(callback){
 					_firedActions[event] = _firedActions[event] || {};
-					var trigger = Mold.Lib.EventStore.getElementTrigger(_element, event);
+					var trigger = EventStore.getElementTrigger(_element, event);
 
 					if(trigger.length > 0){
 						
@@ -129,7 +129,7 @@ Seed({
 			},
 			
 			at : function(event, callback, config){
-				var trigger = Mold.Lib.EventStore.getElementTrigger(_element, event);
+				var trigger = EventStore.getElementTrigger(_element, event);
 				_firedActions[event] = _firedActions[event] || {};
 				if(!_firedActions[event][callback]){
 				
@@ -164,7 +164,7 @@ Seed({
 				}
 			},
 			once : function(event, callback, config){
-				var element = Mold.Lib.EventStore.getElementEvent(_element,  event);
+				var element = EventStore.getElementEvent(_element,  event);
 				if(!element || element.toString() !== callback.toString()){
 					this.on(event, callback, config);
 				}
@@ -174,7 +174,7 @@ Seed({
 					if(_isHTMLElement && _isElementEvent(event)){
 						_element.addEventListener(_getEventName(event), callback);
 					}
-					Mold.Lib.EventStore.addElementEvent(_element,  event, callback);
+					EventStore.addElementEvent(_element,  event, callback);
 					
 					_firedActions[event] = true;
 				};
@@ -195,7 +195,7 @@ Seed({
 					if(callback){
 						_element.removeEventListener(_getEventName(event), callback);
 					}else{
-						var elementEvents = Mold.Lib.EventStore.getElementEvent(_element, event);
+						var elementEvents = EventStore.getElementEvent(_element, event);
 						var i = 0, len = elementEvents.length;
 						for(; i < len; i++){
 							_element.removeEventListener(_getEventName(event), elementEvents[i]);
@@ -203,10 +203,10 @@ Seed({
 					}
 				}
 				if(event){
-					Mold.Lib.EventStore.removeElementEvent(_element, event, callback);
+					EventStore.removeElementEvent(_element, event, callback);
 				}else{
 					
-					Mold.Lib.EventStore.removeEvents(_element);
+					EventStore.removeEvents(_element);
 				}
 				
 				return _element;
@@ -231,8 +231,8 @@ Seed({
 				if(config && config.exclude && config.exclude.indexOf(event) > -1){
 					
 				}else{
-					events = Mold.Lib.EventStore.getElementEvent(_element,  event) || [];
-					var all = Mold.Lib.EventStore.getElementEvent(_element, "all");
+					events = EventStore.getElementEvent(_element,  event) || [];
+					var all = EventStore.getElementEvent(_element, "all");
 					if(all){
 						events = events.concat(all);
 					}
@@ -256,7 +256,7 @@ Seed({
 					}
 				}
 				if(!config.disableSaveTrigger){
-					Mold.Lib.EventStore.saveTrigger(_element, event, data);
+					EventStore.saveTrigger(_element, event, data);
 				}
 				var undefined;
 				return (output !== undefined) ? output : _element;
