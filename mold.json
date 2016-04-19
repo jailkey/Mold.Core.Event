@@ -13,6 +13,7 @@
 	},
 	"seeds": [
 		"Mold.Core.Event",
-		"Mold.Core.EventStore"
+		"Mold.Core.EventStore",
+		"Mold.Test.Core.Event"
 	]
 }

@@ -1,0 +1,179 @@
+{
+	"packages": {
+		"Mold": {
+			"sources": [
+				{
+					"path": "Mold/Core/NPM.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/Sequence.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/VM.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/Validation.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/Version.js",
+					"type": "file"
+				}
+			],
+			"dependencies": [
+				{
+					"name": "Mold.Core.Test",
+					"path": "https://raw.githubusercontent.com/jailkey/Mold.Core.Test/master/",
+					"version": "0.0.1"
+				}
+			]
+		},
+		"Mold.Core.Test": {
+			"sources": [
+				{
+					"path": "Mold/Core/Test/Tester.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/Test/CLIReporter.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/Test.js",
+					"type": "file"
+				}
+			],
+			"dependencies": [
+				{
+					"name": "Mold.Core.Event",
+					"path": "https://raw.githubusercontent.com/jailkey/Mold.Core.Event/master/",
+					"version": "0.0.1"
+				},
+				{
+					"name": "Mold.Core.CLI",
+					"path": "https://raw.githubusercontent.com/jailkey/MoldCLI/master/",
+					"version": "0.2.4"
+				},
+				{
+					"name": "Mold",
+					"path": "https://raw.githubusercontent.com/jailkey/MoldJS/master/",
+					"version": "0.2.3"
+				}
+			]
+		},
+		"Mold.Core.CLI": {
+			"sources": [
+				{
+					"path": "Mold/CMD/CopySeed.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/CopySource.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/CreateDependecy.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/CreatePath.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/CreateRepo.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/FindProjectSeeds.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/GetMoldJson.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/GetPackageInfo.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/GitIgnore.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/Init.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/Install.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/InstallNpmPackage.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/Merge.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/ScanRepositories.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/Uninstall.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/Update.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/UpdateMoldJson.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/CMD/Version.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/CLI.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/CLIForm.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/CLIHelper.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/CLILoadingBar.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/Command.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/InstallInfo.js",
+					"type": "file"
+				},
+				{
+					"path": "Mold/Core/Logger.js",
+					"type": "file"
+				}
+			],
+			"dependencies": [
+				{
+					"name": "Mold",
+					"path": "https://raw.githubusercontent.com/jailkey/MoldJS/master/",
+					"version": "0.2.3"
+				}
+			]
+		}
+	}
+}
